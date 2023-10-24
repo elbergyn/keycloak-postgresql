@@ -7,7 +7,7 @@ volumes:
 services:
   postgres:
     image: postgres:13.7
-    container_name: postgres
+    container_name: postgres_k_teste
     volumes:
       - keycloak-db-data:/var/lib/postgresql/data
     environment:
@@ -16,7 +16,7 @@ services:
       POSTGRES_PASSWORD: K3yCl4k
   keycloak:
     build: .
-    container_name: custom-auth-service
+    container_name: keycloak-auth-service
     environment:
       #Admin Credentials
       KC_HOSTNAME_STRICT: 'false'

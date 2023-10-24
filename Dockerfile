@@ -13,4 +13,6 @@ RUN /opt/keycloak/bin/kc.sh build
 FROM quay.io/keycloak/keycloak:latest
 COPY --from=builder /opt/keycloak/ /opt/keycloak/
 
+COPY ./themes/elleva/ /opt/keycloak/themes/elleva
+
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
